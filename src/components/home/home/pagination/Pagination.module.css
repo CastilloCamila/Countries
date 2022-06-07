@@ -1,0 +1,20 @@
+.containerButtons{
+   margin: 1.5rem 0rem;
+   display: flex;
+   justify-content: center;
+
+}
+.containerButtons button{
+    margin: 2px;
+    background-color: transparent;
+    border: 1px solid #08337B ;
+    border-radius: 4px;
+    color: #08337B;
+    transition: all 0.3s ease;
+}
+.currentPage{
+
+
+    box-shadow: 4px 5px 20px #08337B ;
+
+}

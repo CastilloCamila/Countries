@@ -1,0 +1,40 @@
+.input{
+  outline: none;
+  border:none;
+  border-bottom: 2px solid #08337B;
+  padding: 0.25rem;
+  height: 35px;
+  width: 350px;
+  margin: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+  
+}
+ 
+  
+
+.input:hover{
+  border-color: #DAB9C4;
+
+}
+
+.button{
+  font-family: "Open Sans";
+  font-weight: 300;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0.25rem;
+  height: 45px;
+  width: 70px;
+  border-radius: 8px;
+  cursor: pointer;
+  border:1px solid #08337B;
+  transition: all 0.3s ease;
+  color: #08337B;
+}
+.button:hover{
+
+  border-color: #DAB9C4;
+  color: #08337B;
+}

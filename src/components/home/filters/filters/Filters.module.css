@@ -1,0 +1,49 @@
+.conteinerFilters{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+.divsConteiners{
+    margin: 0rem 0.5rem;
+}
+.divsConteiners label{
+    font-family: "Open Sans";
+    font-weight: 450;
+    margin-right: 0.5rem;
+    color: #08337B;
+}
+.divsConteiners select{
+    font-family: "Open Sans";
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #08337B;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.divsConteiners:hover select {
+    border-bottom: 3px solid #DAB9C4;
+   
+   
+}
+
+.divsConteiners:hover{
+    box-shadow: 45px 25px 35px rgb(212, 206, 206);
+}
+.divsConteiners select option{
+    border: none;
+}
+.button{
+    font-family: "Open Sans";
+    font-weight: 300;
+    border: 1px solid #08337B;
+    border-radius: 8px;
+    background: transparent;
+    color: #08337B;
+    transition: all 0.3s ease;
+}
+.button:hover{
+    border-color: #DAB9C4;
+    color: #DAB9C4;
+    box-shadow: 10px 15px 50px #DAB9C4;
+}

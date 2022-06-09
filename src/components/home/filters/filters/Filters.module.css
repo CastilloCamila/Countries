@@ -20,6 +20,7 @@
     border-bottom: 3px solid #08337B;
     outline: none;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .divsConteiners:hover select {
     border-bottom: 3px solid #DAB9C4;
@@ -41,6 +42,7 @@
     background: transparent;
     color: #08337B;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .button:hover{
     border-color: #DAB9C4;

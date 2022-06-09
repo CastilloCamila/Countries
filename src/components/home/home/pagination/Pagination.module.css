@@ -11,6 +11,7 @@
     border-radius: 4px;
     color: #08337B;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .currentPage{
 

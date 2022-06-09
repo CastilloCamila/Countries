@@ -50,6 +50,7 @@
     outline: none;
     background-color: transparent;
     border-bottom: 2px solid #08337B;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 .form input:hover  {

@@ -55,11 +55,11 @@ export default function Filters() {
                     showConfirmButton: true,
                   })
                   dispatch(filtered({}))
-                dispatch(updatePage(1))
+               
                 return dispatch(filtered(filteredCountries))
             }
             dispatch(filtered({}))
-            dispatch(updatePage(1))
+           
             return dispatch(filtered(filterContinent))
         }
 

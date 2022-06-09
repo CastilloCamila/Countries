@@ -53,7 +53,6 @@ export default function Filters() {
                     icon: 'error',
                     title: 'Please reset the filters to filter by another continent',
                     showConfirmButton: true,
-                    timer: 2000
                   })
                   dispatch(filtered({}))
                 dispatch(updatePage(1))

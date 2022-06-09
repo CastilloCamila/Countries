@@ -152,7 +152,7 @@ export default function Addactivity() {
                         {/* Input Name */}
                         <div className={style.name}>
                             <label htmlFor="name">Name</label>
-                            <input placeholder="Name of the activity" type="text" name="name" value={activity.name} onChange={handleOnChange} />
+                            <input autocomplete="off" placeholder="Name of the activity" type="text" name="name" value={activity.name} onChange={handleOnChange} />
 
                             {errors.name &&
                                 <p className={style.p}>{errors.name}</p>

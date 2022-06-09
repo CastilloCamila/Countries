@@ -76,7 +76,7 @@ export default function Filters() {
                 })
 
                 dispatch(filtered({}))
-                dispatch(updatePage(1))
+               
                 dispatch(filtered(filterAlphabetical))
 
             } else if (alphabetical === 'desc') {
@@ -87,7 +87,7 @@ export default function Filters() {
                 })
 
                 dispatch(filtered({}))
-                dispatch(updatePage(1))
+               
                 dispatch(filtered(filterAlphabetical))
             }
         }

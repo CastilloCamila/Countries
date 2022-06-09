@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHistory} from 'react-router-dom'
-import { AddActivity } from "../../../../../redux/actions";
+import { AddActivity, getAllActivities } from "../../../../../redux/actions";
 import Swal from 'sweetalert2'
 import style from './AddActivity.module.css'
 
@@ -135,6 +135,7 @@ export default function Addactivity() {
                     showConfirmButton: false,
                     timer: 2000
                   })
+                  dispatch(getAllActivities())
                 history.push('/home')
 
             }

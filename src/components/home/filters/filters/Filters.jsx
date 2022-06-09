@@ -30,6 +30,7 @@ export default function Filters() {
 
                 const filterPopulation = filteredCountries.sort((a, b) => a.population - b.population)
                 dispatch(filtered({}))
+                dispatch(getAllCountries())
                 dispatch(filtered(filterPopulation))
 
             } else if (population === 'desc') {

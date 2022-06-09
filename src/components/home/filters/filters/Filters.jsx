@@ -30,7 +30,7 @@ export default function Filters() {
 
                 const filterPopulation = filteredCountries.sort((a, b) => a.population - b.population)
                 dispatch(filtered({}))
-                dispatch(getAllCountries())
+               
                 dispatch(filtered(filterPopulation))
 
             } else if (population === 'desc') {
@@ -44,7 +44,8 @@ export default function Filters() {
         if (continent !== '') {
             
             const filterContinent = filteredCountries.filter(country => country.continent === continent)
-            setContinent('')
+            setContinent('') 
+            dispatch(getAllCountries())
             dispatch(filtered({}))
 
             return dispatch(filtered(filterContinent))

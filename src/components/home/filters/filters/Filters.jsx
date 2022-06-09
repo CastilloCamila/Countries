@@ -101,7 +101,7 @@ export default function Filters() {
 
 
 
-    }, [dispatch, population, continent, alphabetical, activity, allActivities, filteredCountries])
+    }, [dispatch, population, continent, alphabetical, activity, allActivities])
 
     function reset() {
 

@@ -1,6 +1,7 @@
 
 import { useSelector, useDispatch } from "react-redux"
 import { useState, useEffect } from "react"
+import Swal from 'sweetalert2'
 
 import { getAllCountries, filtered, getAllActivities, updatePage } from "../../../../redux/actions"
 
@@ -30,24 +31,36 @@ export default function Filters() {
 
                 const filterPopulation = filteredCountries.sort((a, b) => a.population - b.population)
                 dispatch(filtered({}))
-               
+                dispatch(updatePage(1))
                 dispatch(filtered(filterPopulation))
 
             } else if (population === 'desc') {
 
                 const filterPopulation = filteredCountries.sort((a, b) => b.population - a.population)
                 dispatch(filtered({}))
+                dispatch(updatePage(1))
                 dispatch(filtered(filterPopulation))
             }
         }
 
         if (continent !== '') {
             
+            
             const filterContinent = filteredCountries.filter(country => country.continent === continent)
-            setContinent('') 
-            dispatch(getAllCountries())
+            
+            if(filterContinent.length ===0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please reset the filters to filter by another continent',
+                    showConfirmButton: true,
+                    timer: 2000
+                  })
+                  dispatch(filtered({}))
+                dispatch(updatePage(1))
+                return dispatch(filtered(filteredCountries))
+            }
             dispatch(filtered({}))
-
+            dispatch(updatePage(1))
             return dispatch(filtered(filterContinent))
         }
 
@@ -64,6 +77,7 @@ export default function Filters() {
                 })
 
                 dispatch(filtered({}))
+                dispatch(updatePage(1))
                 dispatch(filtered(filterAlphabetical))
 
             } else if (alphabetical === 'desc') {
@@ -74,12 +88,14 @@ export default function Filters() {
                 })
 
                 dispatch(filtered({}))
+                dispatch(updatePage(1))
                 dispatch(filtered(filterAlphabetical))
             }
         }
         if (activity !== '') {
              
                 const filterActivies = allActivities.find(act => act.id === activity)
+                dispatch(updatePage(1))
                 dispatch(filtered(filterActivies.countries))
             
         }

@@ -24,7 +24,10 @@
 } */
 @media only screen and (max-width: 680px){
     .card{
-        height: 100vh;
+        width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
     .card .cardDetail{
         width: 315px;
@@ -62,7 +65,7 @@
     .card .activityDetail .scroll{
         
         width: -webkit-fill-available;
-        height: 200px;
+        height: 260px;
     }
     
 }

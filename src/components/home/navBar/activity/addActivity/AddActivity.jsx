@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useHistory} from 'react-router-dom'
-import { AddActivity, getAllActivities } from "../../../../../redux/actions";
+import { AddActivity, getAllActivities, getAllCountries } from "../../../../../redux/actions";
 import Swal from 'sweetalert2'
 import style from './AddActivity.module.css'
 
@@ -33,7 +33,8 @@ export default function Addactivity() {
         country: ''
     })
     //---------- Estados--------
-
+  
+    
     const foundCountries = findCountries(countries)
     
  
@@ -151,7 +152,7 @@ export default function Addactivity() {
                 <div className={style.divform}>
                     <form className={style.form} onSubmit={handleOnSubmit}>
                         {/* Input Name */}
-                        <div className={style.name}>
+                        <div className={style.formselect}>
                             <label htmlFor="name">Name</label>
                             <input placeholder="Name of the activity" type="text" name="name" value={activity.name} onChange={handleOnChange} />
 
@@ -160,7 +161,7 @@ export default function Addactivity() {
                             }
                         </div>
                         {/* Select Difficulty*/}
-                        <div className={style.difficulty}>
+                        <div className={style.formselect}>
                             <label htmlFor="difficulty">Dificulty</label>
 
                             <select className={style.select} name="difficulty" id="" value={activity.difficulty} onChange={handleOnChange}>
@@ -176,7 +177,7 @@ export default function Addactivity() {
                             }
                         </div>
                         {/* Select Duration*/}
-                        <div className={style.duration}>
+                        <div className={style.formselect}>
                             <label htmlFor="duration">Duration</label>
 
                             <select className={style.select} name="duration" id="" value={activity.duration} onChange={handleOnChange}>
@@ -192,7 +193,7 @@ export default function Addactivity() {
                             }
                         </div>
                         {/* Select Season*/}
-                        <div className={style.season}>
+                        <div className={style.formselect}>
                             <label htmlFor="season">Season</label>
                             <select className={style.select} name="season" id="" value={activity.season} onChange={handleOnChange}>
                                 <option value="DEFAULT">Select a Seasson</option>
@@ -207,7 +208,7 @@ export default function Addactivity() {
                         </div>
 
                         {/* Select Country*/}
-                        <div className={style.country}>
+                        <div className={style.formselect}>
                             <label htmlFor="country">Select Countries</label>
                             <input placeholder="Select Countries" list="countries" name='country' type="search" value={activity.country} onChange={handleOnChange} />
 

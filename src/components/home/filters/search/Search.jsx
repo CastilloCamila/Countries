@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { filtered } from '../../../../redux/actions'
 import helpCall from '../../../../helpers/HelpCall'
-
+import Filters from "../../filters/filters/Filters.jsx";
 import style from './Search.module.css'
 
 export default function Search() {
@@ -32,12 +32,24 @@ export default function Search() {
         }
     }
     return (
+        <>
         <div className={style.form}>
-            <input autocomplete="off" className={style.input} placeholder='Search a Country' type="text" name="search" value={search.search} onChange={(e) => handleOnChange(e)} />
+            <div className={style.divFilter}>
+                <Filters />    
+            </div>
+            <div className={style.searching}>
+                 <input className={style.input} placeholder='Search a Country' type="text" name="search" value={search.search} onChange={(e) => handleOnChange(e)} />
             <button className={style.button} onClick={handleOnsubmit}>Search</button>
             {errors &&
                 <p>{errors}</p>
+                
             }
+            </div>
+           
+          
+            
         </div>
+         
+         </>
     )
 }

@@ -1,6 +1,6 @@
-.input{
+.input {
   outline: none;
-  border:none;
+  border: none;
   border-bottom: 2px solid #08337B;
   padding: 0.25rem;
   height: 35px;
@@ -9,17 +9,40 @@
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: transparent;
-  
+
 }
+/* .divFilter{
+  display: flex;
+  align-items: center;
+} */
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.input:hover {
+  border-color: #b6b2b6bd;
+color:white
+}
+@media only screen and (max-width: 600px){
+  
+  .searching button{
  
-  
-
-.input:hover{
-  border-color: #DAB9C4;
-
-}
-
-.button{
+  height: 35px;
+  width: 45px;
+  }
+  .input{
+    height: 25px;
+  width: 160px;
+  margin: 5px;
+  }}
+.button {
   font-family: "Open Sans";
   font-weight: 300;
   text-decoration: none;
@@ -29,12 +52,13 @@
   width: 70px;
   border-radius: 8px;
   cursor: pointer;
-  border:1px solid #08337B;
+  border: 1px solid #08337B;
   transition: all 0.3s ease;
   color: #08337B;
 }
-.button:hover{
 
-  border-color: #DAB9C4;
-  color: #08337B;
+.button:hover {
+
+  background-color: #08337B;
+  color: white;
 }

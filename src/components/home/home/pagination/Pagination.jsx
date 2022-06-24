@@ -4,76 +4,48 @@ import { useDispatch, useSelector } from 'react-redux';
 import style from './Pagination.module.css'
 import { updatePage } from '../../../../redux/actions';
 
-export default function Pagination({ totalCountries, countriesPerPage, indexLastCountry }) {
+export default function Pagination({page, paginate ,limitPage, firstPrevControl, nextLastControl }) {
     //---Estados y variables-----
-    const dispatch = useDispatch()
-    const currentPage = useSelector(state => state.currentPage)
-    const pageNumbers = []
-
-    //----------------------------
-    //----- cantidad de paginas-------
-    for (let i = 2; i <= Math.ceil((totalCountries - 9) / countriesPerPage) + 1; i++) {
-        pageNumbers.push(i)
-    }
-    //----------------------------
-    //------paginate-------
-    useEffect(() => {
-        for (let i = 1; i <= Math.ceil(((totalCountries - 9) / countriesPerPage) + 1); i++) {
-            let page = document.getElementById(i);
-
-            page.classList.remove(style['currentPage']);
-        }
-        let current = document.getElementById(currentPage);
-        current.classList.add(style['currentPage'])
-    }, [currentPage,totalCountries,countriesPerPage])
-
-
-    function paginate(number) {
-        dispatch(updatePage(number))
+    var pages = {
+        prepre: 0,
+        pre: 0,
+        page: page,
+        next: 0,
+        nextnext: 0
     }
 
-    function nextPage() {
-        if (currentPage < Math.ceil(((totalCountries - 9) / countriesPerPage) + 1)) {
+    if (page - 2 < 0) { pages.prepre = 0 } else { pages.prepre = page - 2 }
+    if (page - 1 < 0) { pages.pre = 0 } else { pages.pre = page - 1 }
+    if (page + 1 > limitPage) { pages.next = 0 } else { pages.next = page + 1 }
+    if (page + 2 > limitPage) { pages.nextnext = 0 } else { pages.nextnext = page + 2 }
 
-            console.log('ress', Math.ceil(((totalCountries - 9) / countriesPerPage) + 1))
-            for (let i = 1; i <= Math.ceil(((totalCountries - 9) / countriesPerPage) + 1); i++) {
-                let page = document.getElementById(i);
-                page.classList.remove(style['currentPage']);
-            }
-            let current = document.getElementById(currentPage + 1);
-            current.classList.add(style['currentPage'])
-            dispatch(updatePage(currentPage + 1))
-        }
-    }
+    var numerPages = [pages.prepre, pages.pre, page, pages.next, pages.nextnext]
 
-    function previusPage() {
-        if (indexLastCountry > 0) {
-            for (let i = 1; i <= Math.ceil(((totalCountries - 9) / countriesPerPage) + 1); i++) {
-                let page = document.getElementById(i);
-                page.classList.remove(style['currentPage']);
-            }
-            let current = document.getElementById(currentPage - 1);
-            current.classList.add(style['currentPage'])
-            dispatch(updatePage(currentPage - 1))
-        }
-    }
-
+   
     //---------------------------------
     return (
-        <div className={style.containerButtons}>
-            <button onClick={() => previusPage()}>
-                Prev
-            </button>
-            <button onClick={() => paginate(1)} id='1' className={style.currentPage}> 1</button>
-            {
-                pageNumbers.map(number => {
-                    return <button key={number} id={number} onClick={() => paginate(number)}> {number}</button>
-                })
-            }
-            <button onClick={() => nextPage()}>
-                Next
-            </button>
+        <div className={style.containerPag}>
+        <ul>
+            <button disabled={firstPrevControl} className={firstPrevControl ? style.disable : style.pagButton} onClick={(e) => paginate(e, 1)} name="first">First Page</button>
+            <button disabled={firstPrevControl} className={firstPrevControl ? style.disable : style.pagButton} onClick={(e) => paginate(e, "prev")} name="previous">{"<<"}</button>
+
+        </ul>
+        <div className={style.paginate}>
+            <ul>
+                {numerPages.map(n => {
+                    if (n > 0) {
+                        return <li className={(n === page) ? style.currentPage : style} key={n} onClick={(e) => paginate(e, n)} id={n}>
+                            <h5>{n}</h5>
+                        </li>
+                    }
+                })}
+            </ul>
         </div>
+        <ul>
+            <button disabled={nextLastControl} className={nextLastControl ?  style.disable : style.pagButton} onClick={(e) => paginate(e, "next")} name="next">{">>"}</button>
+            <button disabled={nextLastControl} className={nextLastControl ?  style.disable : style.pagButton} onClick={(e) => paginate(e, limitPage)} name="last">Last Page</button>
+        </ul>
+    </div>
 
     )
 };

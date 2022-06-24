@@ -1,4 +1,4 @@
-.containerButtons{
+/* .containerButtons{
    margin: 1.5rem 0rem;
    display: flex;
    justify-content: center;
@@ -11,11 +11,84 @@
     border-radius: 4px;
     color: #08337B;
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 .currentPage{
 
 
     box-shadow: 4px 5px 20px #08337B ;
 
-}
+} */
+.containerPag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerPag ul {
+    padding: 0;
+    margin: 0.5rem;
+  }
+  .containerPag ul .pagButton,
+  .containerPag ul .disable {
+    margin: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    background-color: #08337b;
+    color: white;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .containerPag ul .disable {
+    background-color: #b6b2b6;
+    cursor: default;
+  }
+  .containerPag ul .pagButton:hover{
+    color:#b6b2b6
+  }
+  .paginate ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+  }
+  .paginate ul li {
+    padding: 0 0.3rem;
+  }
+  .paginate ul li h5 {
+    font-size: 20px;
+    color: #b6b2b6;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+  }
+  .paginate ul li h5:hover {
+    color: #08337b;
+    border: solid 2px #08337b;
+    cursor: pointer;
+  }
+  .currentPage h5 {
+    color: #08337b !important;
+  }
+  .currentPage h5 {
+    border: solid 2px #08337b;
+    color:#08337b
+    /* background-color: #08337b; */
+  }
+  @media only screen and (max-width: 600px){
+    .containerPag ul .pagButton,
+  .containerPag ul .disable{
+    margin:1px;
+    font-size: 10px;
+  }
+  .paginate ul li {
+    padding: 0 0.1rem;
+  }
+  .paginate ul li h5 {
+    padding: 2px 5px 2px 5px;
+  }
+  .containerPag ul {
+
+    margin: 0.2rem;
+  }
+  }

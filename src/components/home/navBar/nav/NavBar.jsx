@@ -7,9 +7,9 @@ import logo from "../../../../img/logo.gif"
 export default function NavBar() {
     return (
         <>
-            <nav className={style.nav} >
-                <a className={style.a} href='/home' > <img src={logo} alt="" width="150" height="60" /></a>
-                <div className={style.div}>
+            <div className={style.navarr} >
+                <img src={logo} alt="" width="150" height="60" />
+               <div className={style.contenedorBtn}>
                     <button className={style.btn}>
                         <Link className={style.link} to='/home'>Home</Link>
                     </button>
@@ -19,7 +19,7 @@ export default function NavBar() {
                         </Link>
                     </button>
                 </div>
-            </nav>
+            </div>
         </>
     )
 }

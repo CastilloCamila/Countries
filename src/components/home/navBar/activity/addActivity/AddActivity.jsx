@@ -49,6 +49,7 @@ export default function Addactivity() {
                 country: ''
             })
             setActivityAdded('')
+            dispatch(getAllActivities())
         }
     }, [dispatch])
     // ---- funcion para manejo de errores-----
@@ -135,7 +136,6 @@ export default function Addactivity() {
                     showConfirmButton: false,
                     timer: 2000
                   })
-                  dispatch(getAllActivities())
                 history.push('/home')
 
             }
@@ -153,7 +153,7 @@ export default function Addactivity() {
                         {/* Input Name */}
                         <div className={style.name}>
                             <label htmlFor="name">Name</label>
-                            <input autocomplete="off" placeholder="Name of the activity" type="text" name="name" value={activity.name} onChange={handleOnChange} />
+                            <input placeholder="Name of the activity" type="text" name="name" value={activity.name} onChange={handleOnChange} />
 
                             {errors.name &&
                                 <p className={style.p}>{errors.name}</p>
@@ -198,7 +198,7 @@ export default function Addactivity() {
                                 <option value="DEFAULT">Select a Seasson</option>
                                 <option value="Summer">Summer</option>
                                 <option value="Spring">Spring</option>
-                                <option value="Autum">August</option>
+                                <option value="Autum">Autumn</option>
                                 <option value="Winter">Winter</option>
                             </select>
                             {errors.season &&

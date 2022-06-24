@@ -1,3 +1,12 @@
+
+
+.sideBarr{
+    position: absolute;
+   height:fit-content;
+
+}
+
+
 .conteinerFilters{
     display: flex;
     justify-content: center;
@@ -10,17 +19,21 @@
     font-family: "Open Sans";
     font-weight: 450;
     margin-right: 0.5rem;
-    color: #08337B;
+    color: white;
 }
+
 .divsConteiners select{
     font-family: "Open Sans";
     font-weight: 300;
     background-color: transparent;
     border: none;
-    border-bottom: 3px solid #08337B;
+    border-bottom: 3px solid  rgba(255, 255, 255, 0.589);
+    color:white;
     outline: none;
     transition: all 0.3s ease;
-    cursor: pointer;
+}
+.divsConteiners select option{
+    background-color: #b6b2b6bd;
 }
 .divsConteiners:hover select {
     border-bottom: 3px solid #DAB9C4;
@@ -28,24 +41,22 @@
    
 }
 
-.divsConteiners:hover{
-    box-shadow: 45px 25px 35px rgb(212, 206, 206);
-}
+
 .divsConteiners select option{
     border: none;
 }
 .button{
     font-family: "Open Sans";
     font-weight: 300;
-    border: 1px solid #08337B;
+    border: 1px solid rgba(255, 255, 255, 0.945);
     border-radius: 8px;
     background: transparent;
-    color: #08337B;
+    color: white;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 .button:hover{
-    border-color: #DAB9C4;
-    color: #DAB9C4;
-    box-shadow: 10px 15px 50px #DAB9C4;
+    border-color: #41567c;
+    color: #41567c;
+   
 }

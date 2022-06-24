@@ -1,10 +1,28 @@
-.detail .p{
-    margin: 1rem 0rem 1rem;
+.allData{
+    display: flex;
+    flex-direction: column;
 }
+@media only screen and (max-width: 680px){
+    .allData .detail{
+        flex-direction: column;
+    }
+}
+
+
+
 .detail{
-    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-left:1rem;
+    display: flex;
+    flex-direction: row;
 }
-.detail h2{
+.detail .p{
+    margin-left: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.allData h2{
     font-family: "Open Sans";
     font-weight: 450;
+    margin-bottom: 5px;
 }

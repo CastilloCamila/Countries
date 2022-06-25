@@ -11,9 +11,9 @@ function CardCountry({ image, name, continent, id }) {
                 <div className={styles.header} >
                     <img className={styles.img} src={`${image}`} alt="" />
                     <h1>{name}</h1>
-                    <h2> Continen: {continent}</h2>
+                    <h2> Continent: {continent}</h2>
                     <Link to={`/home/country/${id}`}>
-                        <button>More detail</button>
+                        <button>More details</button>
                     </Link>
                 </div>
             </div>

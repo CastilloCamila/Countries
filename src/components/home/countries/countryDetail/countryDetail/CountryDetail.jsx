@@ -45,7 +45,7 @@ export default function CountryDetail() {
                                 <p className={style.contenido}>Capital: {countryDetail.capital}</p>
                                 <p className={style.contenido}>Subregion: {countryDetail.subregion}</p>
                                 <p className={style.contenido}>Area: {countryDetail.area}</p>
-                                <p className={style.contenido}>Papulation: {countryDetail.population}</p>
+                                <p className={style.contenido}>Population: {countryDetail.population}</p>
                             </div>
 
                         </div>

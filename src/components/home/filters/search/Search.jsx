@@ -38,7 +38,7 @@ export default function Search() {
                 <Filters />    
             </div>
             <div className={style.searching}>
-                 <input className={style.input} placeholder='Search a Country' type="text" name="search" value={search.search} onChange={(e) => handleOnChange(e)} />
+                 <input autocomplete="off" className={style.input} placeholder='Search a Country' type="text" name="search" value={search.search} onChange={(e) => handleOnChange(e)} />
             <button className={style.button} onClick={handleOnsubmit}>Search</button>
             {errors &&
                 <p>{errors}</p>

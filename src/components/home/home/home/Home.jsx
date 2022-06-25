@@ -1,13 +1,9 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getAllCountries,updatePage } from '../../../../redux/actions/index.js'
 import style from './Home.module.css'
-
-
-import Filters from "../../filters/filters/Filters.jsx";
-
 import Pagination from "../pagination/Pagination.jsx";
 import AllCards from '../../countries/allCards/AllCards'
 import Search from '../../filters/search/Search.jsx'
@@ -18,6 +14,7 @@ export default function Home() {
     const filteredCountries = useSelector((state) => state.filteredCountries)
 
     useEffect(() => {
+       
         if (Object.keys(filteredCountries[0]).length === 0) {
             dispatch(getAllCountries())
         }
@@ -53,7 +50,7 @@ export default function Home() {
     const paginate = (e, pageNumber) => {
         console.log('entro paginate', pageNumber)
 
-        if (pageNumber == "next" && page + 1 <= limitPage) {
+        if (pageNumber === "next" && page + 1 <= limitPage) {
             console.log('entro next')
             dispatch(updatePage(page + 1))
         } else if (pageNumber === "prev" && page - 1 >= 1) {

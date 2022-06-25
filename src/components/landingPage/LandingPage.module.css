@@ -1,7 +1,9 @@
-.background {
-  width: 100%;
+
+
+.background{
+    width: 100%;
   height: 100vh;
-  background-image: url('../../img/landingPage.gif');
+  background-image: url('../../img/landingPage.gif'); 
   background-size: cover;
   background-position: center;
   display: flex;
@@ -10,82 +12,73 @@
   align-content: start;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
 
-  .background {
-    background-image: url('../../img/landing420.gif');
-
+  .background{
+    background-image: url('../../img/landing420.gif'); 
+    
   }
-
-  .div {
+  .div{
     margin: 0rem 0rem 3rem 3rem !important;
   }
-
-  .div h1 {
+  .div h1{
     font-size: 23px;
-
+   
   }
-
+  
 }
-
-.div {
+.div{
   margin: 0rem 0rem 5rem 5rem;
 }
-
-.div h1 {
+.div  h1 {
   font-family: "Open Sans";
   font-weight: 100px;
 }
+.btn{
+    text-decoration: none;
+    justify-self: center;
+    background-color: transparent;
+    padding: 0.1rem 2rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    border-radius: 8px;
+    cursor: pointer;
+    border-color: #08337B;
+    transition: all 0.3s ease;
+    color:#08337B ;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
 
-.btn {
-  text-decoration: none;
-  justify-self: center;
-  background-color: transparent;
-  padding: 0.1rem 2rem;
-  font-family: "Open Sans";
-  font-weight: 300;
-  border-radius: 8px;
-  cursor: pointer;
-  border-color: #08337B;
-  transition: all 0.3s ease;
-  color: #08337B;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  overflow: hidden;
+    
+  }
 
+  .btn:hover {
+    border-radius: 8px;
+    padding-right: 24px;
+    padding-left:8px;
+    background-color: #08337B;
+    color: white;
+  }
+  .btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  .btn:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+  .link{
+    text-decoration: none;
+    color: #08337B;}
+    .btn:hover .link{
+      color: white;
+    }
 
-}
-
-.btn:hover {
-  border-radius: 8px;
-  padding-right: 24px;
-  padding-left: 8px;
-  background-color: #08337B;
-  color: white;
-}
-
-.btn:hover:after {
-  opacity: 1;
-  right: 10px;
-}
-
-.btn:after {
-  content: "\00BB";
-  position: absolute;
-  opacity: 0;
-  font-size: 20px;
-  line-height: 40px;
-  top: 0;
-  right: -20px;
-  transition: 0.4s;
-}
-
-.link {
-  text-decoration: none;
-  color: #08337B;
-}
-
-.link:hover {
-  color: white;
-}

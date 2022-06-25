@@ -1,8 +1,6 @@
 
-import React, {  useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import style from './Pagination.module.css'
-import { updatePage } from '../../../../redux/actions';
 
 export default function Pagination({page, paginate ,limitPage, firstPrevControl, nextLastControl }) {
     //---Estados y variables-----
